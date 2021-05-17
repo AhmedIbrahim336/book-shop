@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Local 
+    'users.apps.UsersConfig'
 ]
 
 MIDDLEWARE = [
@@ -79,7 +82,7 @@ DATABASES = {
         'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': '123456seven',
-        'HOST': 'localhost',
+        'HOST': 'db',
         'PORT': 5432
     }
 }
@@ -122,3 +125,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# Add custom user 
+AUTH_USER_MODEL = 'users.CustomUser'
