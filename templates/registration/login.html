@@ -1,0 +1,13 @@
+{% extends '_base.html' %}
+{% block title %}Log In{% endblock title %}
+
+{% block content %}
+   <h2>Login</h2>
+   <form action="post">
+       <!-- this is auth token -->
+       {% csrf_token %}
+       <!-- for user name and password fields -->
+       {{form.as_p}}
+       <button type="submit">Login</button>
+   </form>
+{% endblock content %}
