@@ -1,8 +1,9 @@
+from pages.views import homePageView
 from django.test import TestCase
 
 # user simpleTestCase to test webpages 
 from django.test import SimpleTestCase
-from django.urls.base import reverse
+from django.urls.base import resolve, reverse
 
 class HomepageTests(SimpleTestCase):
 
@@ -27,3 +28,11 @@ class HomepageTests(SimpleTestCase):
 
     def test_homepage_not_contain_html(self):
         self.assertNotContains(self.response , 'Hi, there I should not be on the page')
+    # test the view name 
+    def test_hompage_url_resolvers_homepageView(self):
+        view = resolve('/')
+
+        self.assertEqual(
+            view.func.__name__ ,
+            homePageView.as_view().__name__
+        )
