@@ -130,3 +130,6 @@ STATIC_URL = '/static/'
 
 # Add custom user 
 AUTH_USER_MODEL = 'users.CustomUser'
+# redirect when user login to the homepage 
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
