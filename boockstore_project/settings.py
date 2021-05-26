@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # Third-party
+   'crispy_forms' ,
+
     # Local 
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
@@ -136,6 +139,8 @@ STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
 
+# Djnago-crispy-forms
+CRISPY_TEMPLATE_PACK = 'bootstrap4' # new
 
 
 # Add custom user 
