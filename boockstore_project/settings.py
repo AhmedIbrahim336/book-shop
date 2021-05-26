@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': '123456seven',
-        'HOST': 'db',
+        'HOST': 'localhost',
         'PORT': 5432
     }
 }
@@ -126,6 +126,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+# all the passes for the static files 
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+# this root pass doesn't exit. Django will compile all static files into this directory
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# This told django how to find the static files 
+STATICFILES_FINDERS = [
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+]
+
 
 
 # Add custom user 

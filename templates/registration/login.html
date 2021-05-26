@@ -3,7 +3,7 @@
 
 {% block content %}
    <h2>Login</h2>
-   <form action="post">
+   <form method="POST">
        <!-- this is auth token -->
        {% csrf_token %}
        <!-- for user name and password fields -->
