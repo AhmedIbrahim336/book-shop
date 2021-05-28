@@ -9,11 +9,11 @@
     {% if user.is_authenticated %}
     Hi {{ user.email }}
     <p>
-        <a href="{% url 'logout' %}">Logout</a>
+        <a href="{% url 'account_logout' %}">Logout</a>
     </p>
     {% else %}
     <p>You are not logged in </p>
-    <a href="{% url 'login' %}">Login</a>
-    <a href="{% url 'signup' %}">Sign up</a>
+    <a href="{% url 'account_login' %}">Login</a>
+    <a href="{% url 'account_signup' %}">Sign up</a>
     {% endif %}
 {% endblock content %} 
